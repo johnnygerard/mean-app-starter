@@ -2,7 +2,7 @@
   "buildCommand": "cd client && npm run vercel:build",
   "framework": "angular",
   "installCommand": "npm update --global npm && cd client && npm ci",
-  "outputDirectory": "client/dist/<<REPO_NAME>>/browser",
+  "outputDirectory": "client/dist/¤REPO_NAME¤/browser",
   "headers": [
     {
       "source": "/(.*)",

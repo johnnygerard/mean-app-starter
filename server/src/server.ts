@@ -7,7 +7,7 @@ import {
 } from "./http-status-code.js";
 import cors from "cors";
 
-const CLIENT_ORIGIN = "https://<<REPO_NAME>>-jgerard.vercel.app";
+const CLIENT_ORIGIN = "https://¤CLIENT_DOMAIN_NAME¤";
 const PORT: number = parseInt(env.PORT ?? '3000', 10);
 const app = express();
 
