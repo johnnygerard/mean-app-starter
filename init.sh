@@ -17,6 +17,10 @@ if [[ ! "$repo_name" =~ ^[a-z]+(-[a-z]+)*$ ]]; then
   exit 1
 fi
 
+# Perform in-place text substitutions
+perl -i -pe "s/¤YEAR¤/$(date +%Y)/" LICENSE.txt
+perl -i -pe "s/¤REPO_NAME¤/${repo_name}/" vercel.json
+
 # Install Prettier with Tailwind CSS plugin
 npm install --save-dev --save-exact prettier prettier-plugin-tailwindcss
 
