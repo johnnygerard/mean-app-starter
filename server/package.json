@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "start:dev": "tsc && node --watch --env-file=.env dist/server.js"
+  },
+  "type": "module"
+}
