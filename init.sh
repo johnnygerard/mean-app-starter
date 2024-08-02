@@ -100,6 +100,6 @@ cd "$script_dir"
 
 # Commit changes
 git add .
-git commit -m 'build: initialize project'
+git commit -m 'chore: initialize project'
 
 echo 'Project initialized successfully!'
