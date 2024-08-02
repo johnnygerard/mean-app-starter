@@ -38,6 +38,10 @@ npm install --save-dev eslint @eslint/js @types/eslint__js typescript typescript
 ng new --skip-git --skip-tests --directory=client --inline-style --style=css "$repo_name"
 cd client
 
+# Remove redundant directories and files
+rm -r .vscode/
+rm .gitignore .editorconfig README.md
+
 # Configure Angular project
 ng config "projects.${repo_name}.schematics.@schematics/angular:component.displayBlock" true
 ng config "projects.${repo_name}.schematics.@schematics/angular:component.changeDetection" OnPush
