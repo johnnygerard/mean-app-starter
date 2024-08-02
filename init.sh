@@ -20,7 +20,7 @@ if [[ ! "$repo_name" =~ ^[a-z]+(-[a-z]+)*$ ]]; then
 fi
 
 # Perform in-place text substitutions
-perl -i -pe "s/¤YEAR¤/$(date +%Y)/" LICENSE.txt
+perl -i -pe "s/2024/$(date +%Y)/" LICENSE.txt
 perl -i -pe "s/¤REPO_NAME¤/${repo_name}/" vercel.json
 
 # Install Prettier with Tailwind CSS plugin
