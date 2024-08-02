@@ -13,7 +13,7 @@ mv workflows .github
 read -rp 'Enter repository name: ' repo_name
 
 # Validate repository name with regex
-if [[ ! "$repo_name" =~ ^[a-z]+(-[a-z]+)*$ ]]; then
+if [[ ! "$repo_name" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
   >&2 echo 'Error: Invalid repository name'
   >&2 echo 'Use kebab-case (e.g. hello-world)'
   exit 1
