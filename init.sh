@@ -88,6 +88,9 @@ cd "$script_dir"
 ### START SERVER SETUP ########################################################
 cd server
 
+# Add environment file
+touch .env
+
 # Install TypeScript with Node.js v20 configuration
 npm install --save-dev typescript @types/node@20 @tsconfig/node20
 
