@@ -97,3 +97,5 @@ cd "$script_dir"
 # Commit changes
 git add .
 git commit -m 'build: initialize project'
+
+echo 'Project initialized successfully!'
