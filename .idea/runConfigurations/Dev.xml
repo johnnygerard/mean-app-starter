@@ -1,0 +1,7 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Dev" type="CompoundRunConfigurationType">
+    <toRun name="Angular" type="js.build_tools.npm" />
+    <toRun name="Express" type="js.build_tools.npm" />
+    <method v="2" />
+  </configuration>
+</component>
