@@ -108,5 +108,9 @@ npm run format
 # Commit changes
 git add .
 git commit -m 'chore: initialize project'
+git push
+
+# Create Vercel project
+source scripts/vercel.sh
 
 echo 'Project initialized successfully!'
