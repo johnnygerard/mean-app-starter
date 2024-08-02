@@ -102,6 +102,9 @@ npm install --save-dev @types/cors
 cd "$script_dir"
 ### END SERVER SETUP ##########################################################
 
+# Reformat code with Prettier
+npm run format
+
 # Commit changes
 git add .
 git commit -m 'chore: initialize project'
