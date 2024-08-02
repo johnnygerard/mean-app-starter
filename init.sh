@@ -43,8 +43,34 @@ rm .gitignore .editorconfig README.md
 ng config "projects.${repo_name}.schematics.@schematics/angular:component.displayBlock" true
 ng config "projects.${repo_name}.schematics.@schematics/angular:component.changeDetection" OnPush
 
-# Add Angular environments
+# Generate and configure Angular environments
 ng generate environments
+
+# Overwrite development environment
+cat > src/environments/environment.development.ts << EOF
+export const environment = {
+  apiUrl: "http://localhost:3000",
+  production: false,
+};
+EOF
+
+# Overwrite production environment
+cat > src/environments/environment.ts << EOF
+export const environment = {
+  production: true,
+};
+EOF
+
+# Add preview environment
+cat > src/environments/environment.preview.ts << EOF
+export const environment = {
+  production: false,
+};
+EOF
+
+# Add preview Angular configuration
+ng config "projects.${repo_name}.architect.build.configurations.preview" \
+  '{"fileReplacements":[{"replace":"src/environments/environment.ts","with":"src/environments/environment.preview.ts"}]}'
 
 # Install Tailwind CSS
 npm install --save-dev tailwindcss postcss autoprefixer
