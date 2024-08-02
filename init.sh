@@ -36,7 +36,7 @@ cd "$script_dir"/client
 
 # Configure Angular project
 ng config "projects.${repo_name}.schematics.@schematics/angular:component.displayBlock" true
-ng config "projects.${repo_name}.schematics.@schematics/angular:component.changeDetection"
+ng config "projects.${repo_name}.schematics.@schematics/angular:component.changeDetection" OnPush
 
 # Add Angular environments
 ng generate environments
