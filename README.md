@@ -1,4 +1,4 @@
-# ng-express-template
+# mean-app-starter
 
 This starter template automates the creation of full stack applications using Angular and Express.  
 The project is configured with Vercel Edge Network for the Angular client and Heroku for the Express server.

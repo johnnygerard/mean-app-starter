@@ -17,8 +17,8 @@ mv workflows .github
 repo_name="$(basename "$(realpath .)")"
 
 # Update WebStorm settings
-repo_name="$repo_name" perl -i -pe 's/ng-express-template/$ENV{repo_name}/g' .idea/modules.xml
-mv .idea/ng-express-template.iml ".idea/${repo_name}.iml"
+repo_name="$repo_name" perl -i -pe 's/mean-app-starter/$ENV{repo_name}/g' .idea/modules.xml
+mv .idea/mean-app-starter.iml ".idea/${repo_name}.iml"
 
 # Perform in-place text substitutions
 perl -i -pe "s/2024/$(date +%Y)/" LICENSE.txt
