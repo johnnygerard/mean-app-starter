@@ -1,14 +1,11 @@
 import type { ErrorRequestHandler } from "express";
 import express from "express";
 import { env } from "node:process";
-import {
-  INTERNAL_SERVER_ERROR,
-  NO_CONTENT,
-} from "./http-status-code.js";
+import { INTERNAL_SERVER_ERROR, NO_CONTENT } from "./http-status-code.js";
 import cors from "cors";
 
 const CLIENT_ORIGIN = "https://¤CLIENT_DOMAIN_NAME¤";
-const PORT: number = parseInt(env.PORT ?? '3000', 10);
+const PORT: number = parseInt(env.PORT ?? "3000", 10);
 const app = express();
 
 // Enable CORS for the Angular client

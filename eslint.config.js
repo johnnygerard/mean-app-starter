@@ -7,10 +7,6 @@ export default tseslint.config(
   eslint.configs.recommended,
   ...tseslint.configs.recommended,
   {
-    ignores: [
-      "client/dist/",
-      "client/.angular/cache/",
-      "server/dist/",
-    ],
+    ignores: ["client/dist/", "client/.angular/cache/", "server/dist/"],
   },
 );
