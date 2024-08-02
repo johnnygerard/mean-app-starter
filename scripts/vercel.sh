@@ -15,13 +15,18 @@ echo
 read -rsp 'Provide your Vercel ID: ' VERCEL_ORG_ID
 echo
 
-# Create a new Vercel project and store secrets in GitHub repository
-curl --request POST "https://api.vercel.com/v10/projects" \
+# Create new Vercel project
+response=$(curl --fail \
+  --request POST "https://api.vercel.com/v10/projects" \
   --header "Authorization: Bearer ${VERCEL_TOKEN}" \
   --header 'Content-Type: application/json' \
   --data "{\"name\":\"${repo_name}\"}" \
-  | jq --raw-output '.id' \
-  | gh secret set VERCEL_PROJECT_ID
+)
 
+# Extract Vercel project ID
+VERCEL_PROJECT_ID=$(jq --raw-output '.id' <<< "$response")
+
+# Store secrets in GitHub repository
+gh secret set VERCEL_PROJECT_ID --body "$VERCEL_PROJECT_ID"
 gh secret set VERCEL_ORG_ID --body "$VERCEL_ORG_ID"
 gh secret set VERCEL_TOKEN --body "$VERCEL_TOKEN"
