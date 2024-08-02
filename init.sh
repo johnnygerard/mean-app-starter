@@ -13,15 +13,8 @@ git push --force
 mkdir .github
 mv workflows .github
 
-# Prompt for repository name
-read -rp 'Enter repository name: ' repo_name
-
-# Validate repository name with regex
-if [[ ! "$repo_name" =~ ^[a-z0-9]+(-[a-z0-9]+)*$ ]]; then
-  >&2 echo 'Error: Invalid repository name'
-  >&2 echo 'Use kebab-case (e.g. hello-world)'
-  exit 1
-fi
+# Get repository name from current directory
+repo_name="$(basename "$(realpath .)")"
 
 # Perform in-place text substitutions
 perl -i -pe "s/2024/$(date +%Y)/" LICENSE.txt
