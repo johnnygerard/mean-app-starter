@@ -3,7 +3,6 @@
     "node": "^20",
     "npm": "^10"
   },
-  "name": "ng-express-template",
   "scripts": {
     "format": "prettier --write .",
     "format:check": "prettier --check .",

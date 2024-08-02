@@ -1,11 +1,9 @@
 #!/bin/bash
 set -o errexit
 
-if [ ! -f package.json ] || [ "$(npm pkg get name)" != '"ng-express-template"' ]; then
-  >&2 echo 'Error: Invalid execution path'
-  >&2 echo 'This script must be executed from its parent directory.'
-  exit 1
-fi
+# Set current working directory to script directory
+script_dir="$(dirname "$(realpath "$0")")"
+cd "$script_dir"
 
 # Prompt for repository name
 read -rp 'Enter repository name: ' repo_name
