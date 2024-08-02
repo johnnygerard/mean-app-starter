@@ -28,7 +28,7 @@ npm install --save-dev eslint @eslint/js @types/eslint__js typescript typescript
 ### START CLIENT SETUP ########################################################
 # Init Angular client (CLI will prompt for SSR)
 ng new --skip-git --skip-tests --directory=client --inline-style --style=css "$repo_name"
-cd client
+cd "$script_dir"/client
 
 # Configure Angular project
 ng config "projects.${repo_name}.schematics.@schematics/angular:component.displayBlock" true
@@ -69,12 +69,10 @@ EOF
 # Add Vercel deployment npm script
 # shellcheck disable=SC2016
 npm pkg set scripts.vercel:build='ng version && ng build --configuration \"$VERCEL_ENV\"'
-
-cd -
 ### END CLIENT SETUP ##########################################################
 
 ### START SERVER SETUP ########################################################
-cd server
+cd "$script_dir"/server
 
 # Install TypeScript with Node.js v20 configuration
 npm install --save-dev typescript @types/node@20 @tsconfig/node20
@@ -86,8 +84,6 @@ npm install --save-dev @types/express
 # Install CORS middleware
 npm install cors
 npm install --save-dev @types/cors
-
-cd -
 ### END SERVER SETUP ##########################################################
 
 # Commit changes
