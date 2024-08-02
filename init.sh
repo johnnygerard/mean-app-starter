@@ -5,6 +5,10 @@ set -o errexit
 script_dir="$(dirname "$(realpath "$0")")"
 cd "$script_dir"
 
+# Amend initial commit message
+git commit --amend --message 'chore: clone template repository'
+git push --force
+
 # Enable GitHub workflows
 mkdir .github
 mv workflows .github
