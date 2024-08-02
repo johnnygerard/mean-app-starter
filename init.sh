@@ -16,6 +16,10 @@ mv workflows .github
 # Get repository name from current directory
 repo_name="$(basename "$(realpath .)")"
 
+# Update WebStorm settings
+repo_name="$repo_name" perl -i -pe 's/ng-express-template/$ENV{repo_name}/g' .idea/modules.xml
+mv .idea/ng-express-template.iml ".idea/${repo_name}.iml"
+
 # Perform in-place text substitutions
 perl -i -pe "s/2024/$(date +%Y)/" LICENSE.txt
 perl -i -pe "s/¤REPO_NAME¤/${repo_name}/" vercel.json
