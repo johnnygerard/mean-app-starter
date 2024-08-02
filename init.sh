@@ -5,6 +5,10 @@ set -o errexit
 script_dir="$(dirname "$(realpath "$0")")"
 cd "$script_dir"
 
+# Enable GitHub workflows
+mkdir .github
+mv workflows .github
+
 # Prompt for repository name
 read -rp 'Enter repository name: ' repo_name
 
