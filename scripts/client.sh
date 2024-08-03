@@ -20,21 +20,21 @@ ng generate environments
 cat > src/environments/environment.development.ts << EOF
 export const environment = {
   apiUrl: "http://localhost:3000",
-  production: false,
+  name: "development",
 };
 EOF
 
 # Overwrite production environment
 cat > src/environments/environment.ts << EOF
 export const environment = {
-  production: true,
+  name: "production",
 };
 EOF
 
 # Add preview environment
 cat > src/environments/environment.preview.ts << EOF
 export const environment = {
-  production: false,
+  name: "preview",
 };
 EOF
 
