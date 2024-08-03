@@ -31,10 +31,10 @@ npm install --save-dev --save-exact prettier prettier-plugin-tailwindcss
 npm install --save-dev eslint @eslint/js @types/eslint__js typescript typescript-eslint
 
 # Create and set up Angular client
-source client.sh
+source scripts/client.sh
 
 # Initialize Express server
-source server.sh
+source scripts/server.sh
 
 # Reformat code with Prettier
 npm run format
