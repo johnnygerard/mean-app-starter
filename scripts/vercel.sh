@@ -1,12 +1,6 @@
 #!/bin/bash
 set -o errexit
 
-# Make sure the repository name is set
-if [ -z "$repo_name" ]; then
-  >&2 echo 'Error: undefined repository name variable'
-  exit 1
-fi
-
 # Prompt for the Vercel token
 read -rsp 'Provide a valid Vercel token: ' VERCEL_TOKEN
 echo
@@ -20,7 +14,7 @@ response=$(curl --fail \
   --request POST "https://api.vercel.com/v10/projects" \
   --header "Authorization: Bearer ${VERCEL_TOKEN}" \
   --header 'Content-Type: application/json' \
-  --data "{\"name\":\"${repo_name}\"}" \
+  --data "{\"name\":\"${repo_name:?}\"}" \
 )
 
 # Extract Vercel project ID
