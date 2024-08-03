@@ -103,7 +103,7 @@ EOF
 
 # Add Vercel deployment npm script
 # shellcheck disable=SC2016
-npm pkg set scripts.vercel:build='ng version && ng build --configuration \"$VERCEL_ENV\"'
+npm pkg set scripts.vercel:build='ng version && ng build --configuration "$VERCEL_ENV"'
 
 cd "$script_dir"
 ### END CLIENT SETUP ##########################################################
