@@ -2,7 +2,7 @@
 set -o errexit
 
 # Init Angular client (CLI will prompt for SSR)
-ng new --skip-git --skip-tests --directory=client --inline-style --style=css "$repo_name"
+ng new --skip-git --skip-tests --directory=client --inline-style --style=css "${repo_name:?}"
 cd client
 
 # Remove redundant directories and files
